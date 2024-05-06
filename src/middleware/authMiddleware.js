@@ -5,7 +5,6 @@ exports.authMiddleware = (req, res, next) => {
 //   const postmanToken = token?.split(" ")[1]; 
   try {
     const decoded = jwt.verify(token, "shhhhh");
-    console.log("decoded", decoded);
     if (decoded.email) {
       next();
     } else {
