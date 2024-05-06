@@ -52,8 +52,11 @@ exports.getAllProducts = async (req, res) => {
         { $skip: limit * (pageNumber - 1) },
         { $limit: limit },
       ]);
-      if (Array.isArray(resp)) {
-        responder(res, 3003, resp, totalProducts[0].productsCount);
+      if (!totalProducts?.length) {
+        responder(res, 3003, resp, 0);
+      }
+      if (Array.isArray(resp) && totalProducts?.length) {
+        responder(res, 3003, resp, totalProducts[0].productsCount || 0);
       }
     } catch (error) {
       errorResponder(res, error);

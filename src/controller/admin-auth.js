@@ -26,7 +26,6 @@ exports.loginUser = async (req, res) => {
       const token = jwt.sign({ email: req.body.email }, "shhhhh"); //generating a new token using email
       userResp.token = token;
       const finalResponse = await userResp.save();
-      console.log("finalResponse", finalResponse);
       responder(res, 3001, {
         name: finalResponse?.name,
         email: finalResponse?.email,
