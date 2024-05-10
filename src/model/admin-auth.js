@@ -15,4 +15,4 @@ const adminAuthSchema = new Schema(
   { timestamps: true }
 );
 
-exports.AdminAuth = mongoose.model("auth", adminAuthSchema); //model(Product) is always singular
+exports.AdminAuth = mongoose.model("auth", adminAuthSchema);
