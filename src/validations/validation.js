@@ -77,4 +77,4 @@ module.exports = {
   getSingleProductRules,
   updateProductRules,
   deleteProductRules,
-};
+}; 
