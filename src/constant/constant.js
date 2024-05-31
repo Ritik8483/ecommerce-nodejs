@@ -5,5 +5,6 @@ exports.responseCodeMsg = {
   3003: "Products list.",
   3004: "Product detail.",
   3005: "Product updated successfully.",
-  3006: "Product deleted successfully."
+  3006: "Product deleted successfully.",
+  3007: "Users fetched successfully."
 };
