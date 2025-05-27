@@ -26,6 +26,8 @@ exports.addProducts = async (req, res) => {
 };
 
 exports.getAllProducts = async (req, res) => {
+  // req.query contains all query parameters as strings
+  //typeof req.query.limit // "string"
   const limit = +req.query.limit || 100;
   const pageNumber = +req.query.page || 1;
   const searchRegEx = new RegExp(req.query.search, "i");

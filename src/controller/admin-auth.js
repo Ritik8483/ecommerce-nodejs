@@ -6,7 +6,7 @@ const { responder } = require("../responder/responder");
 
 exports.createUser = async (req, res) => {
   try {
-    const token = jwt.sign({ email: req.body.email }, "shhhhh"); //generating a token using email
+    const token = jwt.sign({ email: req.body.email }, "shhhhh"); //generating a token using email;"shhhhh" is the secret key used to sign the token
     const hash = bcrypt.hashSync(req.body.password, 10); //hashing the password saltRounds = 10
     const user = new AdminAuth(req.body);
     user.token = token;
